@@ -90,7 +90,7 @@ def new_article():
 
         if article:
             flash(TASK_CREATED)
-    return render_template('articles/food_items/new.html', title='Nueva tarea', form=form, active='new_article')
+    return render_template('articles/food_items/new.html', title='New Article', form=form, active='new_article')
 
 @page.route('/articles/food_items/show/<int:article_id>')  
 def get_article(article_id):
