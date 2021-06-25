@@ -1,0 +1,35 @@
+{% extends 'layout.html'%}
+{% from 'helpers/_forms.html' import render_field  %}
+
+{% block container %}
+<div class="col-md-12 col-md-offset-1">
+  <h3>Edit article</h3>
+  <form class="" method="post"> 
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}"> 
+
+    <div class="form-group">
+      {{ render_field(form.article_photo, class='form-control', placeholder='Article Photo')}}
+    </div>
+
+    <div class="form-group">
+      {{ render_field(form.name_article, class='form-control', placeholder='Article Name')}}
+    </div>
+
+    <div class="form-group">
+      {{ render_field(form.article_description, class='form-control',placeholder='Description of article')}}
+    </div>
+
+    <div class="form-group">
+      {{ render_field(form.article_address, class='form-control', placeholder='Article Address')}}
+    </div>
+
+    <div class="form-group">
+      {{ render_field(form.article_expires, class='form-control', placeholder='Article Expires')}}
+    </div>
+
+    <button type="submit" class="btn btn-primary" name="button">
+      Save
+    </button>
+  </form>
+</div>
+{% endblock %}
