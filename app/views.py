@@ -29,7 +29,7 @@ def page_not_found(error):
 
 @page.route('/')
 def index():
-    return render_template('index.html', title='Index')
+    return render_template('index.html', title='Home')
 
 @page.route('/logout')
 def logout():
