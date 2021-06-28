@@ -1,19 +1,35 @@
 {% extends 'layout.html' %}
 
 {% block container %}
-<div>
+<div class="image-fondo">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css')}}">
     <h1 class="display-4">Add items to donApp</h1>
-<hr>
 <p>
     DonApp is an application where you can post different articles in an easy and fast way, take a photo of the article
-    Enter the location of the item and you're done, you're helping.
+    Enter the location 
 </p>
-<h1 class="display-6">But what kind of articles?</h1>
+<p>
+    of the item and you're done, you're helping.
+</p>
+<h1 class="display-5">But what kind of articles?</h1>
 <p>
     DonApp classifies two types of articles which correspond to food and others, where others are articles without a date of
     expiration.
 </p>
+<br><br><br><br><br><br><br><br><br><br>
+<div class="contenedor-imagenes">
+    <img src="../static/images/GooglePlay.png" width="110" height="50">
+    <img src="../static/images/AppStore.png" width="110" height="50">
+  </div>
+<br>
+  <div class="pull-right">
+    <img src="../static/images/facebook.png" width="40" height="40">
+    <img src="../static/images/instagram.png" width="40" height="40">
+    <img src="../static/images/twitter.png" width="40" height="40">
+    <img src="../static/images/youtube.png" width="40" height="40">
+</div>
+
+<hr>
 <p>&copy; ABSI</p>
 </div>
 {% endblock %}

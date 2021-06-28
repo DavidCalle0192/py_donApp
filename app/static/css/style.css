@@ -1,7 +1,23 @@
 body {
-    background-image: 'fondoSENA.png';
-    /*background: #ffffff;  /* fallback for old browsers */
-    /*background: -webkit-linear-gradient(to right, #ffffff, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
-    /*background: linear-gradient(to right, #ffffff, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: url(../images/backgraund_sena.png);
+    background-size: cover;
+    /*background: #00416A;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #FFE000, #799F0C, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
 
+.contenedor-imagenes {
+    display: flex;
+  }  
+.contenedor-imagenes img:first-child {
+    margin-right: 20px;
+  }
+
+.fondo {
+  background: #134E5E;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+

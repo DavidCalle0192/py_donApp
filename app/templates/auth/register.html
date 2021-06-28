@@ -2,17 +2,17 @@
  {% from 'helpers/_forms.html' import render_field %}
  
  {% block container %}
- <div class="col-md-12 col-md-offset-1">
-   <h3>Registro</h3>
+ <div class="col-md-8 col-md-offset-1">
+   <h3>Register</h3>
    <form class="" method="post">
      <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
  
      <div class="form-group">
-       {{ render_field(form.username, class='form-control', placeholder='Nombre de Usuario')}}
+       {{ render_field(form.username, class='form-control', placeholder='User Name')}}
      </div>
  
      <div class="form-group">
-       {{ render_field(form.email, class='form-control', placeholder='Correo')}}
+       {{ render_field(form.email, class='form-control', placeholder='Email')}}
      </div>
  
      <div class="form-group">
@@ -24,16 +24,16 @@
     </div> 
     
      <div class="form-group">
-       {{ render_field(form.password, class='form-control',placeholder='Contraseña')}}
+       {{ render_field(form.password, class='form-control',placeholder='Password')}}
      </div>
  
      <div class="form-group">
-       {{ render_field(form.confirm_password, class='form-control',placeholder='Confirmar Contraseña')}}
+       {{ render_field(form.confirm_password, class='form-control',placeholder='Confirm Password')}}
      </div>
  
      <div class="form-check">
        {{ form.accept(class_='form-check-input')}}
-       <label for="" class= "form-check-bale">Acepto los Terminos y Condiciones</label>
+       <label for="" class= "form-check-bale">I accept the terms and conditions</label>
      </div>
  
      <button type="submit" class="btn btn-primary" name="button">
