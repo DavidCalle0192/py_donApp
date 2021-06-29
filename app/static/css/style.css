@@ -21,12 +21,27 @@ body {
   backdrop-filter: blur(20px);
   border: var(--border);
   border-radius: var(--br);
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
-  box-shadow: 0 10px 20px 5px rgba(0,0,0,0.05);
+  box-shadow: 5px 10px 20px 5px rgba(0,0,0,0.05);
   overflow: hidden;
   display: flex;
   margin-top: 40px;
+  padding: 10px;
+}
+
+.container_glass2{
+  background-color: var(--bg-white);
+  backdrop-filter: blur(20px);
+  border: var(--border);
+  border-radius: var(--br);
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 5px 10px 20px 5px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  margin-top: 40px;
+  padding: 10px;
 }
 
 .sidebar{
@@ -155,7 +170,7 @@ card .button{
 }
 
 .btn{
-  background: #0084ff;
+  background: #15171b;
   border: none;
   font-weight: bolder;
   color: white;

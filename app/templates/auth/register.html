@@ -2,46 +2,63 @@
  {% from 'helpers/_forms.html' import render_field %}
  
  {% block container %}
- <div class="col-md-8 col-md-offset-1">
-   <h3>Register</h3>
-   <form class="" method="post">
-     <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
- 
-     <div class="form-group">
-       {{ render_field(form.username, class='form-control', placeholder='User Name')}}
-     </div>
- 
-     <div class="form-group">
-       {{ render_field(form.email, class='form-control', placeholder='Email')}}
-     </div>
- 
-     <div class="form-group">
-      {{ render_field(form.mobile, class='form-control',placeholder='please enter Mobile')}}
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css')}}">
+ <div class="col-md-6 col-md-offset-1 container_glass">
+  <div class="tasks">
+    <div class="card">
+      <div class="content">
+        <div class="right">
+          <div class="status">
+            <h3>Register</h3>
+          </div>
+          <div>
+            <form class="" method="post">
+              <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+          
+              <div class="form-group">
+                {{ render_field(form.username, class='form-control', placeholder='User Name')}}
+              </div>
+          
+              <div class="form-group">
+                {{ render_field(form.email, class='form-control', placeholder='Email')}}
+              </div>
+          
+              <div class="form-group">
+               {{ render_field(form.mobile, class='form-control',placeholder='please enter Mobile')}}
+             </div>
+         
+             <div class="form-group">
+               {{ render_field(form.user_photo, class='form-control',placeholder='upload image')}}
+             </div> 
+             
+              <div class="form-group">
+                {{ render_field(form.password, class='form-control',placeholder='Password')}}
+              </div>
+          
+              <div class="form-group">
+                {{ render_field(form.confirm_password, class='form-control',placeholder='Confirm Password')}}
+              </div>
+          
+              <div class="form-check">
+                {{ form.accept(class_='form-check-input')}}
+                <label for="" class= "form-check-bale">I accept the terms and conditions</label>
+              </div>
+          
+              <button type="submit" class="btn btn-secondary" name="button">
+                Register
+              </button>
+          
+            </form>
+          </div>
+        </div>
+        <div class="right">
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          &nbsp;&nbsp;&nbsp;<img src="../static/images/group.jpg" width="250" height="250">
+        </div>
+      </div>
     </div>
-
-    <div class="form-group">
-      {{ render_field(form.user_photo, class='form-control',placeholder='upload image')}}
-    </div> 
-    
-     <div class="form-group">
-       {{ render_field(form.password, class='form-control',placeholder='Password')}}
-     </div>
- 
-     <div class="form-group">
-       {{ render_field(form.confirm_password, class='form-control',placeholder='Confirm Password')}}
-     </div>
- 
-     <div class="form-check">
-       {{ form.accept(class_='form-check-input')}}
-       <label for="" class= "form-check-bale">I accept the terms and conditions</label>
-     </div>
- 
-     <button type="submit" class="btn btn-primary" name="button">
-       Registro
-     </button>
- 
-   </form>
- 
+  </div>
+</div>
  
  {% endblock %}
  

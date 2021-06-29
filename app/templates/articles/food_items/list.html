@@ -1,63 +1,88 @@
 {% extends 'layout.html' %}
 
-{% block container %}
+  {% block container %}
 
-<div class="d-inline-block">
-  <br>
-  <h2>List of Articles</h2>
-  <br>
-</div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Photo</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Address</th>
-      <th scope="col">Expires</th>
-      <th scope="col">operations</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for article in articles %}
-      <tr>
-        <td>
-          <a href="{{url_for('.get_article', article_id=article.id)}}">{{article.article_photo}}</a>
-        </td>
-        <td>{{article.name_article}}</td>
-        <td>{{article.article_description}}</td>
-        <td>{{article.article_address}}</td>
-        <td>{{article.article_expires}}</td>
-        <td>
-          <a href="{{url_for('.edit_article', article_id=article.id)}}" class="btn btn-secondary">Edit</a>
-          <a href="{{url_for('.delete_article',article_id=article.id)}}" class="btn btn-danger btn-delete">remove</a>
-        </td>
-      </tr>
-    {% endfor %}
-  </tbody>
+   <div class="container_glass2">
+    <div class="d-inline-block">
 
-</table>
-<nav>
-  <ul class="pagination">
+      <div class="profile-card">
+        <br><br>
+        <h2>List of Articles</h2>
+        <span>Julio 15th, 2021</span>
+      </div>
+      <div class="right">
+        <img src="../static/images/lazo.svg" width="250" height="200">
+      </div>
+    </div>
+     
+    <div class="tasks">
+      <div class="card">
+        <div class="content">
+          
+          <div class="right">
+            <br><br><br>
+            <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Photo</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Address</th>
+            <th scope="col">Expires</th>
+            <th scope="col">operations</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for article in articles %}
+            <tr>
+              <td>
+                <a href="{{url_for('.get_article', article_id=article.id)}}">{{article.article_photo}}</a>
+              </td>
+              <td>{{article.name_article}}</td>
+              <td>{{article.article_description}}</td>
+              <td>{{article.article_address}}</td>
+              <td>{{article.article_expires}}</td>
+              <td>
+                <a href="{{url_for('.edit_article', article_id=article.id)}}" class="btn btn-secondary">Edit</a>
+                <a href="{{url_for('.delete_article',article_id=article.id)}}" class="btn btn-danger btn-delete">remove</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+  
+      </table>
+            </div>
+            </div>
+          </div>
+        </div>
+   </div>
+    
+   <div>
+    <br>
+    <nav>
+      <ul class="pagination">
 
-    {% if pagination.has_prev %}
-    <li class = "page-item">
-      <a href="{{url_for('.articles', page=page-1)}}" class="btn btn-primary mr-1">Previous</a>
-    </li>
-    {% endif %}
+        {% if pagination.has_prev %}
+        <li class = "page-item">
+          <a href="{{url_for('.articles', page=page-1)}}" class="btn btn-secondary mr-1">Previous</a>
+        </li>
+        {% endif %}
 
-    {% if pagination.has_next %}
-    <li class= "page-item">
-      <a href="{{url_for('.articles', page=page+1)}}" class="btn btn-primary">Next</a>
-     </li>
-    {%endif%}
-  </ul>
-  <div>
-    <a href="{{url_for('.new_article')}}" class="btn btn-success btn-create">New item</a>  
-  </div>
-</nav>
-<hr>
+        {% if pagination.has_next %}
+        <li class= "page-item">
+          <a href="{{url_for('.articles', page=page+1)}}" class="btn btn-secondary">Next</a>
+        </li>
+        {%endif%}
+      </ul>
+      <div>
+        <a href="{{url_for('.new_article')}}" class="btn btn-success btn-create">New item</a>  
+      </div>
+     
+    </nav>
+    <hr>
+   </div>
 
 {% endblock %}
+
 
