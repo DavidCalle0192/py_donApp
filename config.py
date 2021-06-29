@@ -19,8 +19,8 @@ class DevelopmentConfig(Config):
     MAIL_SERVER = 'smtp.googlemail.com' 
     MAIL_PORT = 587
     MAIL_USE_TLS =True
-    MAIL_USERNAME = 'called691@gmail.com'
-    MAIL_PASSWORD = ('3217576343a') 
+    MAIL_USERNAME = 'sdonapp@gmail.com'
+    MAIL_PASSWORD = 'M%%cfe$DavidC.calleHdhBNF3ji2'
 
 config = { 
     'development': DevelopmentConfig, 
