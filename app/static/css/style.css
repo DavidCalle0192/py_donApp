@@ -26,7 +26,21 @@ body {
   box-shadow: 5px 10px 20px 5px rgba(0,0,0,0.05);
   overflow: hidden;
   display: flex;
-  margin-top: 40px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.container_glass_login{
+  background-color: var(--bg-white);
+  backdrop-filter: blur(20px);
+  border: var(--border);
+  border-radius: var(--br);
+  width: 70%;
+  margin: 0 auto;
+  box-shadow: 5px 10px 20px 5px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  margin-top: 300px;
   padding: 10px;
 }
 
@@ -92,6 +106,12 @@ body {
   margin-top: 10px;
 }
 
+.profile-card2{
+  color: rgb(14, 29, 31);
+  text-align: center;
+  margin-top: 10px;
+}
+
 .profile{
   border-radius: 50%;
   width: 100%;
@@ -127,7 +147,24 @@ main .header span{
   box-shadow: 0 5px 15px 2px rgba(0,0,0,0.15);
 }
 
+.card2{
+  border-radius: var(--br);
+  box-sizing: border-box;
+  width: 153%;
+  margin: 10px, 0 20px 0;
+  overflow: hidden;
+  border: var(--border);
+  box-shadow: 0 5px 15px 2px rgba(0,0,0,0.15);
+}
+
 .card .content{
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20px;
+}
+
+.card2 .content{
   display: flex;
   align-items: center;
   background: white;
@@ -183,6 +220,59 @@ card .button{
   text-align: right;
   padding: 20px;
 }
+
+/*parte 2 */
+.card2 .left{
+  padding-right: 15px;
+}
+
+.card2 .right{
+  width: 100%;
+}
+
+.card2 .right .task{
+  font-size: 22px;
+}
+
+.card2 .right .status{
+  padding: 5px 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.card2 .right .progress{
+  background-color: #ddd;
+  width: 100%;
+  height: 10px;
+}
+
+.card2 .right .progress .fill{
+  height: 10px;
+  margin: 10px 0;
+}
+
+.card2 .right .progress .fill.fill-20{
+  background-color: rgb(255,56,21);
+  width: 20%;
+}
+
+.card2 .right .progress .fill.fill-40{
+  background-color: rgb(255,181,21);
+  width: 40%;
+}
+
+.card2 .right .progress .fill.fill-100{
+  background-color: rgb(87,255,21);
+  width: 100%;
+}
+
+card2 .button{
+  background-filter: blur(5px);
+  text-align: right;
+  padding: 20px;
+}
+
+
 
 .btn{
   background: #15171b;

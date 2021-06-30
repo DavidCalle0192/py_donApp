@@ -3,34 +3,54 @@
 {% from 'helpers/_forms.html' import render_field  %}
 
 {% block container %}
-<div class="col-md-8 col-md-offset-1">
-  <h3>New item</h3>
-  <form class="" method="post"> 
-    <input type="hidden" name="csrf_token" value="{{csrf_token()}}"> 
-
-    <div class="form-group">
-      {{ render_field(form.article_photo, class='form-control', placeholder='article photo')}}
+<div class="col-md-12 col-md-offset-1" class="grid-block" style="background-image: url('../static/images/acuarela.png'); width: 100%; height: 100vh;">
+  <div class="container_glass">
+    <div class="col-md-8 col-md-offset-1">
+      <div class="tasks">
+        <div class="card2">
+          <div class="content">
+           <div class="right">
+            <div class="status">
+              <h3>New item food</h3>
+            </div>
+            <form class="" method="post"> 
+              <input type="hidden" name="csrf_token" value="{{csrf_token()}}"> 
+          
+              <div class="form-group">
+                {{ render_field(form.article_photo, class='form-control', placeholder='article photo')}}
+              </div>
+          
+              <div class="form-group">
+                {{ render_field(form.name_article, class='form-control', placeholder='name article')}}
+              </div>
+          
+              <div class="form-group">
+                {{ render_field(form.article_description, class='form-control',placeholder='article description')}}
+              </div>
+          
+              <div class="form-group">
+                {{ render_field(form.article_address, class='form-control', placeholder='article address')}}
+              </div>
+          
+              <div class="form-group">
+                {{ render_field(form.article_expires, class='form-control', placeholder='article expires')}}
+              </div>
+          
+              <button type="submit" class="btn btn-primary" name="button">
+                Save
+              </button>
+            </form>
+           </div>
+           <br>
+           <img src="../static/images/malabares.jpg" alt="" width="250" height="250">
+          </div>
+          
+        </div>
+        
+      </div>
+      
     </div>
-
-    <div class="form-group">
-      {{ render_field(form.name_article, class='form-control', placeholder='name article')}}
-    </div>
-
-    <div class="form-group">
-      {{ render_field(form.article_description, class='form-control',placeholder='article description')}}
-    </div>
-
-    <div class="form-group">
-      {{ render_field(form.article_address, class='form-control', placeholder='article address')}}
-    </div>
-
-    <div class="form-group">
-      {{ render_field(form.article_expires, class='form-control', placeholder='article expires')}}
-    </div>
-
-    <button type="submit" class="btn btn-primary" name="button">
-      Save
-    </button>
-  </form>
+    
+  </div>
 </div>
 {% endblock %}

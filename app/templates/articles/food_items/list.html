@@ -1,108 +1,118 @@
 {% extends 'layout.html' %}
 
   {% block container %}
-
-   <div class="container_glass2">
+    <div class="col-md-12 col-md-offset-1" class="grid-block" style="background-image: url('../static/images/liquido2.png'); width: 100%; height: 50vh; ">
+      <div class="container_glass2">
     
-    <div class="right">
-      
-      <div class="container_glass3">
-        <div class="d-inline-block">
-
-          <div class="profile-card">
-            <br><br>
-            <h2>List of Articles</h2>
-            <span>Julio 15th, 2021</span>
-          </div>
-          <br>
-          <div class="contenedor-imagenes">
-            <img src="../static/images/lazo.svg" width="265" height="140">
-        </div>
-        </div>
-      </div>
-    </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <div class="tasks">
-      <div class="card">
-        <div class="content">
+        <div class="right">
           
-          <div class="right">
-
-            <nav class="navbar navbar-light bg-light">
+          <div class="container_glass3">
+            <div class="d-inline-block">
+              <nav class="navbar navbar-dark bg-dark">
+                <div class="container">
+                  <a class="navbar-brand" href="#">
+                    <div class="profile-card">
+                      <h2>List of Articles</h2>
+                      <span>Julio 15th, 2021</span>
+                    </div>
+                  </a>
+                </div>
+              </nav>
               
-            <div class="container-fluid">
-                <img src="../static/images/logo.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
-                <h2 class="display-5">DonApp</h2>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
-              
-            </nav>
+              <br>
+              <div>
+                <br>
+                <nav>
+                 <div align="center">
+                  <ul class="pagination">
             
-            <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Photo</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Address</th>
-            <th scope="col">Expires</th>
-            <th scope="col">operations</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for article in articles %}
-            <tr>
-              <td>
-                <a href="{{url_for('.get_article', article_id=article.id)}}">{{article.article_photo}}</a>
-              </td>
-              <td>{{article.name_article}}</td>
-              <td>{{article.article_description}}</td>
-              <td>{{article.article_address}}</td>
-              <td>{{article.article_expires}}</td>
-              <td>
-                <a href="{{url_for('.edit_article', article_id=article.id)}}" class="btn btn-secondary">Edit</a>
-                <a href="{{url_for('.delete_article',article_id=article.id)}}" class="btn btn-danger btn-delete">remove</a>
-              </td>
-            </tr>
-          {% endfor %}
-        </tbody>
-  
-      </table>
-            </div>
+                    {% if pagination.has_prev %}
+                    <li class = "page-item">
+                      <a href="{{url_for('.articles', page=page-1)}}" class="btn btn-secondary mr-1">
+                        <img src="../static/images/previous.png" width="30" height="30">
+                      </a>
+                    </li>
+                    {% endif %}
+            
+                    {% if pagination.has_next %}
+                    <li class= "page-item">
+                      <a href="{{url_for('.articles', page=page+1)}}" class="btn btn-secondary">
+                        <img src="../static/images/next.png" width="30" height="30">
+                      </a>
+                    </li>
+                    {%endif%}
+                    <img src="../static/images/lazo.svg" width="150" height="70">
+                  </ul>
+                  
+                 </div>
+                 
+                </nav>
+                <hr>
+               </div>
             </div>
           </div>
         </div>
-   </div>
+        &nbsp;&nbsp;&nbsp;
+        <div class="tasks">
+          <div class="card">
+            <div class="content">
+              
+              <div class="right">
     
-   <div>
-    <br>
-    <nav>
-      <ul class="pagination">
-
-        {% if pagination.has_prev %}
-        <li class = "page-item">
-          <a href="{{url_for('.articles', page=page-1)}}" class="btn btn-secondary mr-1">Previous</a>
-        </li>
-        {% endif %}
-
-        {% if pagination.has_next %}
-        <li class= "page-item">
-          <a href="{{url_for('.articles', page=page+1)}}" class="btn btn-secondary">Next</a>
-        </li>
-        {%endif%}
-      </ul>
-      <div>
-        <a href="{{url_for('.new_article')}}" class="btn btn-success btn-create">New item</a>  
-      </div>
-     
-    </nav>
-    <hr>
-   </div>
-
-{% endblock %}
+                <nav class="navbar navbar-light bg-light">
+                  
+                <div class="container-fluid">
+                    <img src="../static/images/user2.png" alt="" width="50" height="50">
+                    <h2 class="display-5">Hola admin</h2>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">
+                        <img src="../static/images/search.png" width="20" height="20">
+                      </button>
+                    </form>
+                  </div>
+                  
+                </nav>
+                
+                <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Photo</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Address</th>
+                <th scope="col">Expires</th>
+                <th scope="col">operations</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for article in articles %}
+                <tr>
+                  <td>
+                    <img src="../static/images/user_donate.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
+                    <!--<a href="{{url_for('.get_article', article_id=article.id)}}">{{article.article_photo}}</a>-->
+                  </td>
+                  <td>{{article.name_article}}</td>
+                  <td>{{article.article_description}}</td>
+                  <td>{{article.article_address}}</td>
+                  <td>{{article.article_expires}}</td>
+                  <td>
+                    <a href="{{url_for('.edit_article', article_id=article.id)}}" class="btn btn-secondary">Edit</a>
+                    <a href="{{url_for('.delete_article',article_id=article.id)}}" class="btn btn-danger btn-delete">remove</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+      
+          </table>
+                </div>
+                </div>
+              </div>
+            </div>
+       </div>
+        
+    </div>
+  {% endblock %}
 
 

@@ -2,11 +2,10 @@
 {% from 'helpers/_forms.html' import render_field  %}
 
 {% block container %}
+<div class="col-md-12 col-md-offset-1" class="grid-block" style="background-image: url('../static/images/acuarela.png'); width: 125%; height: 125vh; margin-top: -160px;">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css')}}">
 
-<div class="col-md-12 col-md-offset-1">
-  
-<div class="container_glass">
+<div class="container_glass_login">
   <div class="sidebar">
     <div class="profile-card">
       <br><br><br>
@@ -43,8 +42,9 @@
       </div>
     </div>
   </div>
-</div>
+
 <br><br><br><br>
 <hr>
 <p>&copy; ABSI</p>
+</div>
 {% endblock %}
